@@ -157,14 +157,22 @@ mainApp.app.get('/api/issuer/issuance-request', async (req, res) => {
   // set the claim values - only for idTokenHint attestation
   if ( issuanceConfig.claims ) {
     if ( issuanceConfig.claims.given_name ) {
-      issuanceConfig.claims.given_name = "Megan";
+      issuanceConfig.claims.given_name = "Policy";
     }
     if ( issuanceConfig.claims.family_name ) {
-      issuanceConfig.claims.family_name = "Bowen";
+      issuanceConfig.claims.family_name = "Holder";
     }
     if ( issuanceConfig.claims.photo ) {
       console.log( 'We set a photo claim');
       issuanceConfig.claims.photo = photo;
+    }
+    if ( issuanceConfig.claims.policyNumber ) {
+      console.log( 'set a policy number');
+      issuanceConfig.claims.policyNumber = "PN345678";
+    }
+    if ( issuanceConfig.claims.vin ) {
+      console.log('set vin');
+      issuanceConfig.claims.vin = "1VERBGR828HG2GH84GHSDG";
     }
   }
 
